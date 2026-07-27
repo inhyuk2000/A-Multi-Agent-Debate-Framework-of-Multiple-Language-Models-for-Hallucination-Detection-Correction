@@ -19,13 +19,7 @@
 
 > **KCC 2025 Best Poster Award**
 
-<a href="https://drive.google.com/file/d/14KXFnR415BbbJ_B9oexl76601NYtoaFU/view" target="_blank">
-  <img
-    src="https://drive.google.com/thumbnail?id=14KXFnR415BbbJ_B9oexl76601NYtoaFU&sz=w1000"
-    alt="KCC 2025 Best Poster Award"
-    width="700"
-  />
-</a>
+🏅 [Award Certificate](https://drive.google.com/file/d/14KXFnR415BbbJ_B9oexl76601NYtoaFU/view)
 
 <br/>
 <br/>
