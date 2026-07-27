@@ -5,40 +5,6 @@
 <br/>
 <br/>
 
-# 0. Getting Started (시작하기)
-
-## 서버 실행
-
-```bash
-$ git clone 저장소_URL
-$ cd 저장소_이름
-$ pip install -r requirements.txt
-$ python app.py
-```
-
-## API Key 설정
-
-`.env` 파일을 생성하고 다음과 같이 API Key를 입력합니다.
-
-```env
-OPENAI_API_KEY=YOUR_OPENAI_API_KEY
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-PERPLEXITY_API_KEY=YOUR_PERPLEXITY_API_KEY
-```
-
-## Chrome Extension 실행
-
-1. Chrome 브라우저에서 `chrome://extensions`에 접속합니다.
-2. 우측 상단의 `개발자 모드`를 활성화합니다.
-3. `압축해제된 확장 프로그램을 로드합니다`를 선택합니다.
-4. 프로젝트의 Chrome Extension 폴더를 등록합니다.
-
-[논문 링크](논문_URL)
-
-[시연 영상](시연_영상_URL)
-
-<br/>
-<br/>
 
 # 1. Project Overview (프로젝트 개요)
 
@@ -242,97 +208,7 @@ project/
 <br/>
 <br/>
 
-# 8. Coding Convention (코딩 컨벤션)
-
-## Python 명명 규칙
-
-```python
-# 변수 및 함수: snake_case
-debate_result = []
-
-def compare_answers():
-    pass
-
-
-# 클래스: PascalCase
-class DebateManager:
-    pass
-
-
-# 상수: UPPER_SNAKE_CASE
-MAX_DEBATE_TURNS = 3
-```
-
-## JavaScript 명명 규칙
-
-```javascript
-// 변수 및 함수: camelCase
-const debateResult = [];
-
-const compareAnswers = () => {
-  return;
-};
-
-// 상수: UPPER_SNAKE_CASE
-const MAX_DEBATE_TURNS = 3;
-```
-
-## API Key 관리
-
-```env
-OPENAI_API_KEY=
-GEMINI_API_KEY=
-PERPLEXITY_API_KEY=
-```
-
-- API Key는 코드에 직접 작성하지 않습니다.
-- `.env` 파일은 `.gitignore`에 등록합니다.
-
-<br/>
-<br/>
-
-# 9. Commit Convention (커밋 컨벤션)
-
-## 기본 구조
-
-```text
-type: subject
-
-body
-```
-
-## Type 종류
-
-```text
-feat: 새로운 기능 추가
-fix: 버그 수정
-docs: 문서 수정
-style: 코드 포맷 수정
-refactor: 코드 리팩토링
-test: 테스트 코드 추가
-chore: 환경 설정 및 패키지 수정
-```
-
-## 커밋 예시
-
-```text
-feat: 모델 답변 불일치 탐지 기능 구현
-
-GPT와 Gemini의 선택지를 비교하고
-답변이 다를 경우 토론 진행 팝업을 출력
-```
-
-```text
-feat: 멀티 에이전트 토론 파이프라인 구현
-
-논의 챗봇과 모더레이터의 턴 교환 로직을 추가하고
-토론 종료 후 최종 결과를 요약하도록 구현
-```
-
-<br/>
-<br/>
-
-# 10. Project Results (프로젝트 성과)
+# 8. Project Results (프로젝트 성과)
 
 - 2025학년도 수능 전 문항 분석 결과, 전체 문항 중 **32%에서 한 개 이상의 모델이 오답을 생성**하는 현상을 확인했습니다.
 - 둘 중 한 모델만 오답인 경우 토론 후 정답 도달 비율이 **75%에서 97%로 향상**되었습니다.
@@ -344,7 +220,7 @@ feat: 멀티 에이전트 토론 파이프라인 구현
 <br/>
 <br/>
 
-# 11. Limitations & Future Work (한계점 및 향후 발전 방향)
+# 9. Limitations & Future Work (한계점 및 향후 발전 방향)
 
 - 토론 성능 차이에 대한 통계적 유의성 검정 보완
 - 객관식 문항을 넘어 비정형·개방형 질문으로 검증 범위 확대
