@@ -15,6 +15,21 @@
 
 📑 [Research Paper (PDF)](https://drive.google.com/file/d/1q8yfzXqd31LKVdXK5JN_vYRBYoJjJf0D/view)
 
+## 🏆 Award
+
+> **KCC 2025 Best Poster Award**
+
+<a href="https://drive.google.com/file/d/14KXFnR415BbbJ_B9oexl76601NYtoaFU/view" target="_blank">
+  <img
+    src="https://drive.google.com/thumbnail?id=14KXFnR415BbbJ_B9oexl76601NYtoaFU&sz=w1000"
+    alt="KCC 2025 Best Poster Award"
+    width="700"
+  />
+</a>
+
+<br/>
+<br/>
+
 # 1. Project Overview (프로젝트 개요)
 
 - **프로젝트 이름**: 다중 언어 모델 기반 멀티 에이전트 챗봇 토론 프레임워크를 통한 환각 탐지 및 교정
