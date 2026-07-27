@@ -1,5 +1,9 @@
 <a href="시연 영상 링크" target="_blank">
-  <img src="배너 이미지 링크" alt="멀티 에이전트 토론 프레임워크 배너" width="100%"/>
+  <img
+    src="https://drive.google.com/thumbnail?id=1z1awg9RXY8ONrvvl2OFhBLXKMn80SIZH&sz=w2000"
+    alt="멀티 에이전트 토론 프레임워크 배너"
+    width="100%"
+  />
 </a>
 
 <br/>
