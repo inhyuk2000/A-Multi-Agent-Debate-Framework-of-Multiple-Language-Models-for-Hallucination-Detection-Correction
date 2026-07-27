@@ -1,320 +1,353 @@
-<a href="https://club-project-one.vercel.app/" target="_blank">
-<img src="https://github.com/user-attachments/assets/daa622b9-7c69-4786-8db3-4996b7f140be" alt="배너" width="100%"/>
+<a href="시연 영상 링크" target="_blank">
+  <img src="배너 이미지 링크" alt="멀티 에이전트 토론 프레임워크 배너" width="100%"/>
 </a>
 
 <br/>
 <br/>
 
 # 0. Getting Started (시작하기)
+
+## 서버 실행
+
 ```bash
-$ npm start
+$ git clone 저장소_URL
+$ cd 저장소_이름
+$ pip install -r requirements.txt
+$ python app.py
 ```
-[서비스 링크](https://club-project-one.vercel.app/)
+
+## API Key 설정
+
+`.env` 파일을 생성하고 다음과 같이 API Key를 입력합니다.
+
+```env
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+PERPLEXITY_API_KEY=YOUR_PERPLEXITY_API_KEY
+```
+
+## Chrome Extension 실행
+
+1. Chrome 브라우저에서 `chrome://extensions`에 접속합니다.
+2. 우측 상단의 `개발자 모드`를 활성화합니다.
+3. `압축해제된 확장 프로그램을 로드합니다`를 선택합니다.
+4. 프로젝트의 Chrome Extension 폴더를 등록합니다.
+
+[논문 링크](논문_URL)
+
+[시연 영상](시연_영상_URL)
 
 <br/>
 <br/>
 
 # 1. Project Overview (프로젝트 개요)
-- 프로젝트 이름: 모여봐요 동아리숲!
-- 프로젝트 설명: 전국 대학 동아리 일정관리 및 홍보 커뮤니티
+
+- **프로젝트 이름**: 다중 언어 모델 기반 멀티 에이전트 챗봇 토론 프레임워크를 통한 환각 탐지 및 교정
+- **프로젝트 기간**: 2025.03 ~ 2025.07
+- **프로젝트 설명**: 서로 다른 LLM이 독립적으로 생성한 답변을 비교하고, 답변이 일치하지 않을 경우 토론을 통해 상호 검증하는 멀티 에이전트 프레임워크
+- **프로젝트 목적**: 단일 모델의 학습 데이터 편향과 자체 검증 기능 부족으로 발생하는 환각 문제를 완화하고 답변의 정확성과 논리적 일관성을 향상
+- **검증 데이터**: 2025학년도 대학수학능력시험 전 문항
+- **주요 분석 대상**: 모델 간 답변이 달랐던 수능 66문항
+- **프로젝트 성과**: KCC 2025 논문 발표 및 Best Poster Award 수상
 
 <br/>
 <br/>
 
 # 2. Team Members (팀원 및 팀 소개)
-| 이동규 | 신유승 | 김나연 | 이승준 |
-|:------:|:------:|:------:|:------:|
-| <img src="https://github.com/user-attachments/assets/c1c2b1e3-656d-4712-98ab-a15e91efa2da" alt="이동규" width="150"> | <img src="https://github.com/user-attachments/assets/78ec4937-81bb-4637-975d-631eb3c4601e" alt="신유승" width="150"> | <img src="https://github.com/user-attachments/assets/78ce1062-80a0-4edb-bf6b-5efac9dd992e" alt="김나연" width="150"> | <img src="https://github.com/user-attachments/assets/beea8c64-19de-4d91-955f-ed24b813a638" alt="이승준" width="150"> |
-| PL | FE | FE | FE |
-| [GitHub](https://github.com/LDK1009) | [GitHub](https://github.com/SinYusi) | [GitHub](https://github.com/nay3on) | [GitHub](https://github.com/conconcc) |
+
+| 송인혁 | 공동 연구자 |
+|:------:|:-----------:|
+| 제1저자 | 공동 저자 |
+| 문제 정의 및 연구 기획 | 연구 및 실험 지원 |
+| 토론 프레임워크 설계 | 결과 검토 |
+| Chrome Extension 개발 | 논문 작성 지원 |
+| 성능 평가 및 결과 분석 | 공동 연구 수행 |
+| [GitHub](https://github.com/inhyuk2000) | GitHub 링크 |
 
 <br/>
 <br/>
 
 # 3. Key Features (주요 기능)
-- **회원가입**:
-  - 회원가입 시 DB에 유저정보가 등록됩니다.
 
-- **로그인**:
-  - 사용자 인증 정보를 통해 로그인합니다.
+- **다중 LLM 답변 생성**
+  - GPT-4o mini와 Gemini 2.0 Flash가 동일한 질문에 독립적으로 답변합니다.
+  - 서로 다른 모델의 답변을 활용해 교차 검증을 수행합니다.
 
-- **내 동아리 일정관리**:
-  - 캘린더 UI를 통해 동아리 관련 일정 추가&삭제가 가능합니다.
-  - 체크박스를 통해 종료되거나 이미 수행한 일정을 표시할 수 있습니다.
+- **답변 불일치 탐지**
+  - 두 모델이 생성한 답변과 선택지를 비교합니다.
+  - 답변이 일치하지 않으면 사용자에게 토론 진행 여부를 안내합니다.
 
-- **동아리 찾기**:
-  - 대학 내 동아리를 검색할 수 있습니다.
-  - 검색 시 해당 동아리가 업로드한 홍보글이 보여집니다.
+- **사용자 동의 기반 토론**
+  - 사용자가 토론 진행 여부를 직접 선택할 수 있습니다.
+  - 불필요한 토론을 방지하고 사용자 중심의 상호작용 흐름을 제공합니다.
 
-- **동아리 홍보**:
-  - 홍보글 등록을 통해 동아리를 홍보할 수 있습니다.
+- **역할 분담형 멀티 에이전트 구조**
+  - 논의 챗봇은 서로의 답변과 추론 근거를 검토합니다.
+  - 모더레이터는 토론 순서와 대화 흐름을 관리합니다.
+  - 저지 챗봇은 모델 간 답변과 최종 결론을 검토합니다.
 
-- **동아리 만들기**:
-  - 새로운 동아리를 만들어 관리할 수 있습니다.
+- **토론 과정 시각화**
+  - Chrome Extension 화면에서 모델별 주장과 토론 과정을 확인할 수 있습니다.
+  - 이전 대화 맥락을 유지하며 토론 내용을 순차적으로 출력합니다.
 
-- **동아리 프로필**:
-  - 동아리 홍보글에서 동아리 이름(링크)를 클릭하면 해당 동아리 프로필로 이동합니다.
-  - 동아리 프로필에서는 동아리 소개, 동아리 활동사진 갤러리, 동아리 홍보글 기록관 등을 볼 수 있습니다.
+- **추가 토론 기능**
+  - 첫 번째 토론 결과의 근거가 부족한 경우 추가 토론을 진행할 수 있습니다.
+  - 이전 결론의 취약점을 보완하기 위한 추가 프롬프트를 제공합니다.
+
+- **최종 답변 요약**
+  - 토론 종료 후 모델 간 합의 내용과 최종 답변을 사용자에게 제공합니다.
 
 <br/>
 <br/>
 
 # 4. Tasks & Responsibilities (작업 및 역할 분담)
-|  |  |  |
-|-----------------|-----------------|-----------------|
-| 이동규    |  <img src="https://github.com/user-attachments/assets/c1c2b1e3-656d-4712-98ab-a15e91efa2da" alt="이동규" width="100"> | <ul><li>프로젝트 계획 및 관리</li><li>팀 리딩 및 커뮤니케이션</li><li>커스텀훅 개발</li></ul>     |
-| 신유승   |  <img src="https://github.com/user-attachments/assets/78ec4937-81bb-4637-975d-631eb3c4601e" alt="신유승" width="100">| <ul><li>메인 페이지 개발</li><li>동아리 만들기 페이지 개발</li><li>커스텀훅 개발</li></ul> |
-| 김나연   |  <img src="https://github.com/user-attachments/assets/78ce1062-80a0-4edb-bf6b-5efac9dd992e" alt="김나연" width="100">    |<ul><li>홈 페이지 개발</li><li>로그인 페이지 개발</li><li>동아리 찾기 페이지 개발</li><li>동아리 프로필 페이지 개발</li><li>커스텀훅 개발</li></ul>  |
-| 이승준    |  <img src="https://github.com/user-attachments/assets/beea8c64-19de-4d91-955f-ed24b813a638" alt="이승준" width="100">    | <ul><li>회원가입 페이지 개발</li><li>마이 프로필 페이지 개발</li><li>커스텀훅 개발</li></ul>    |
+
+| 담당자 | 역할 | 주요 업무 |
+|:------:|:----:|:---------|
+| 송인혁 | 제1저자 | 문제 정의 및 연구 아이디어 기획 |
+| 송인혁 | 시스템 설계 | 역할 분담형 멀티 에이전트 토론 구조 설계 |
+| 송인혁 | 프레임워크 개발 | LLM API 연동 및 토론 파이프라인 구현 |
+| 송인혁 | Extension 개발 | 답변 불일치 알림창 및 토론 과정 UI 구현 |
+| 송인혁 | 실험 설계 | 2025학년도 수능 데이터 기반 검증 방식 설계 |
+| 송인혁 | 데이터 분석 | 모델별 초기 답변과 토론 후 결과 비교 |
+| 송인혁 | 논문 작성 | 실험 결과 분석, 논문 작성 및 학회 발표 |
+
+## 기여도
+
+- 논문 제1저자
+- 아이디어 기획: **100%**
+- 토론 프레임워크 및 Chrome Extension 개발: **80%**
+- 성능 평가 및 검증: **80%**
 
 <br/>
 <br/>
 
 # 5. Technology Stack (기술 스택)
+
 ## 5.1 Language
-|  |  |
-|-----------------|-----------------|
-| HTML5    |<img src="https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31" alt="HTML5" width="100">| 
-| CSS3    |   <img src="https://github.com/user-attachments/assets/c531b03d-55a3-40bf-9195-9ff8c4688f13" alt="CSS3" width="100">|
-| Javascript    |  <img src="https://github.com/user-attachments/assets/4a7d7074-8c71-48b4-8652-7431477669d1" alt="Javascript" width="100"> | 
+
+| 기술 | 활용 내용 |
+|:----:|:---------|
+| Python | LLM API 연동, 토론 파이프라인 및 성능 평가 구현 |
+| JavaScript | Chrome Extension 인터페이스 및 사용자 상호작용 구현 |
+| HTML5 | 답변 불일치 알림창과 토론 대화창 구성 |
+| CSS3 | Chrome Extension UI 스타일링 |
 
 <br/>
 
-## 5.2 Frotend
-|  |  |  |
-|-----------------|-----------------|-----------------|
-| React    |  <img src="https://github.com/user-attachments/assets/e3b49dbb-981b-4804-acf9-012c854a2fd2" alt="React" width="100"> | 18.3.1    |
-| StyledComponents    |  <img src="https://github.com/user-attachments/assets/c9b26078-5d79-40cc-b120-69d9b3882786" alt="StyledComponents" width="100">| 6.1.12   |
-| MaterialUI    |  <img src="https://github.com/user-attachments/assets/75a46fa7-ebc0-4a9d-b648-c589f87c4b55" alt="MUI" width="100">    | 5.0.0  |
-| DayJs    |  <img src="https://github.com/user-attachments/assets/3632d7d6-8d43-4dd5-ba7a-501a2bc3a3e4" alt="DayJs" width="100">    | 1.11.12    |
+## 5.2 LLM & API
+
+| 기술 | 활용 내용 |
+|:----:|:---------|
+| OpenAI API | 기본 챗봇, 논의 챗봇 및 모더레이터 구성 |
+| Google Gemini API | 이종 모델 기반 답변 생성 및 토론 수행 |
+| Perplexity API | 답변 검토 및 저지 챗봇 구성 |
 
 <br/>
 
-## 5.3 Backend
-|  |  |  |
-|-----------------|-----------------|-----------------|
-| Firebase    |  <img src="https://github.com/user-attachments/assets/1694e458-9bb0-4a0b-8fe6-8efc6e675fa1" alt="Firebase" width="100">    | 10.12.5    |
+## 5.3 Platform & Analysis
+
+| 기술 | 활용 내용 |
+|:----:|:---------|
+| Chrome Extension | 기존 챗봇 환경에 답변 비교 및 토론 기능 제공 |
+| Excel | 문항별 초기 답변과 토론 수행 결과 정리 |
+| GitHub | 소스 코드 및 프로젝트 문서 관리 |
 
 <br/>
-
-## 5.4 Cooperation
-|  |  |
-|-----------------|-----------------|
-| Git    |  <img src="https://github.com/user-attachments/assets/483abc38-ed4d-487c-b43a-3963b33430e6" alt="git" width="100">    |
-| Git Kraken    |  <img src="https://github.com/user-attachments/assets/32c615cb-7bc0-45cd-91ea-0d1450bfc8a9" alt="git kraken" width="100">    |
-| Notion    |  <img src="https://github.com/user-attachments/assets/34141eb9-deca-416a-a83f-ff9543cc2f9a" alt="Notion" width="100">    |
-
 <br/>
 
 # 6. Project Structure (프로젝트 구조)
+
 ```plaintext
 project/
-├── public/
-│   ├── index.html           # HTML 템플릿 파일
-│   └── favicon.ico          # 아이콘 파일
-├── src/
-│   ├── assets/              # 이미지, 폰트 등 정적 파일
-│   ├── components/          # 재사용 가능한 UI 컴포넌트
-│   ├── hooks/               # 커스텀 훅 모음
-│   ├── pages/               # 각 페이지별 컴포넌트
-│   ├── App.js               # 메인 애플리케이션 컴포넌트
-│   ├── index.js             # 엔트리 포인트 파일
-│   ├── index.css            # 전역 css 파일
-│   ├── firebaseConfig.js    # firebase 인스턴스 초기화 파일
-│   package-lock.json    # 정확한 종속성 버전이 기록된 파일로, 일관된 빌드를 보장
-│   package.json         # 프로젝트 종속성 및 스크립트 정의
-├── .gitignore               # Git 무시 파일 목록
-└── README.md                # 프로젝트 개요 및 사용법
+├── extension/
+│   ├── manifest.json
+│   ├── content.js
+│   ├── background.js
+│   ├── popup.html
+│   ├── popup.js
+│   └── styles.css
+│
+├── server/
+│   ├── app.py
+│   ├── agents/
+│   │   ├── discussion_agent.py
+│   │   ├── judge_agent.py
+│   │   └── moderator_agent.py
+│   │
+│   ├── debate/
+│   │   ├── answer_compare.py
+│   │   ├── debate_manager.py
+│   │   └── result_summary.py
+│   │
+│   └── prompts/
+│       ├── discussion_prompt.py
+│       ├── judge_prompt.py
+│       └── moderator_prompt.py
+│
+├── data/
+│   ├── csat_2025.xlsx
+│   └── debate_results.xlsx
+│
+├── analysis/
+│   ├── performance_analysis.py
+│   └── error_analysis.py
+│
+├── docs/
+│   ├── paper.pdf
+│   └── presentation.pdf
+│
+├── requirements.txt
+├── .env.example
+└── README.md
 ```
 
 <br/>
 <br/>
 
 # 7. Development Workflow (개발 워크플로우)
-## 브랜치 전략 (Branch Strategy)
-우리의 브랜치 전략은 Git Flow를 기반으로 하며, 다음과 같은 브랜치를 사용합니다.
 
-- Main Branch
-  - 배포 가능한 상태의 코드를 유지합니다.
-  - 모든 배포는 이 브랜치에서 이루어집니다.
-  
-- {name} Branch
-  - 팀원 각자의 개발 브랜치입니다.
-  - 모든 기능 개발은 이 브랜치에서 이루어집니다.
+## 7.1 문제 정의
 
-<br/>
-<br/>
+- 실제 LLM 서비스에서 발생한 수능 문항 답변 오류 확인
+- 환각 탐지·방지·교정 관련 선행 연구 검토
+- 단일 모델 기반 검증 방식의 한계와 Research Gap 구체화
 
-# 8. Coding Convention
-## 문장 종료
-```
-// 세미콜론(;)
-console.log("Hello World!");
-```
+## 7.2 프레임워크 설계
 
-<br/>
+- 기본 챗봇, 논의 챗봇, 저지 챗봇, 모더레이터 역할 정의
+- 모델 간 답변 비교 및 토론 진행 조건 설계
+- Turn Taking 문제를 고려한 2개 논의 모델 구성
 
+## 7.3 시스템 개발
 
-## 명명 규칙
-* 상수 : 영문 대문자 + 스네이크 케이스
-```
-const NAME_ROLE;
-```
-* 변수 & 함수 : 카멜케이스
-```
-// state
-const [isLoading, setIsLoading] = useState(false);
-const [isLoggedIn, setIsLoggedIn] = useState(false);
-const [errorMessage, setErrorMessage] = useState('');
-const [currentUser, setCurrentUser] = useState(null);
+- LLM API를 연동한 토론 파이프라인 구현
+- 사용자 동의 기반 답변 불일치 알림창 개발
+- 토론 과정과 최종 결론을 제공하는 Chrome Extension 개발
 
-// 배열 - 복수형 이름 사용
-const datas = [];
+## 7.4 실험 및 데이터 분석
 
-// 정규표현식: 'r'로 시작
-const = rName = /.*/;
+- 2025학년도 수능 전 문항에 대해 모델별 초기 답변 수집
+- 답변이 달랐던 66문항을 대상으로 토론 수행
+- 초기 답변과 토론 후 결과를 문항별로 정리
+- 동일 모델과 이종 모델 기반 토론 결과 비교
 
-// 이벤트 핸들러: 'on'으로 시작
-const onClick = () => {};
-const onChange = () => {};
+## 7.5 논문 작성 및 발표
 
-// 반환 값이 불린인 경우: 'is'로 시작
-const isLoading = false;
-
-// Fetch함수: method(get, post, put, del)로 시작
-const getEnginList = () => {...}
-```
-
-<br/>
-
-## 블록 구문
-```
-// 한 줄짜리 블록일 경우라도 {}를 생략하지 않고, 명확히 줄 바꿈 하여 사용한다
-// good
-if(true){
-  return 'hello'
-}
-
-// bad
-if(true) return 'hello'
-```
-
-<br/>
-
-## 함수
-```
-함수는 함수 표현식을 사용하며, 화살표 함수를 사용한다.
-// Good
-const fnName = () => {};
-
-// Bad
-function fnName() {};
-```
-
-<br/>
-
-## 태그 네이밍
-Styled-component태그 생성 시 아래 네이밍 규칙을 준수하여 의미 전달을 명확하게 한다.<br/>
-태그명이 길어지더라도 의미 전달의 명확성에 목적을 두어 작성한다.<br/>
-전체 영역: Container<br/>
-영역의 묶음: {Name}Area<br/>
-의미없는 태그: <><br/>
-```
-<Container>
-  <ContentsArea>
-    <Contents>...</Contents>
-    <Contents>...</Contents>
-  </ContentsArea>
-</Container>
-```
-
-<br/>
-
-## 폴더 네이밍
-카멜 케이스를 기본으로 하며, 컴포넌트 폴더일 경우에만 파스칼 케이스로 사용한다.
-```
-// 카멜 케이스
-camelCase
-// 파스칼 케이스
-PascalCase
-```
-
-<br/>
-
-## 파일 네이밍
-```
-컴포넌트일 경우만 .jsx 확장자를 사용한다. (그 외에는 .js)
-customHook을 사용하는 경우 : use + 함수명
-```
+- 연구 결과 정량·정성 분석
+- 제1저자로 논문 작성
+- KCC 2025 학술대회 발표
+- Best Poster Award 수상
 
 <br/>
 <br/>
 
-# 9. 커밋 컨벤션
+# 8. Coding Convention (코딩 컨벤션)
+
+## Python 명명 규칙
+
+```python
+# 변수 및 함수: snake_case
+debate_result = []
+
+def compare_answers():
+    pass
+
+
+# 클래스: PascalCase
+class DebateManager:
+    pass
+
+
+# 상수: UPPER_SNAKE_CASE
+MAX_DEBATE_TURNS = 3
+```
+
+## JavaScript 명명 규칙
+
+```javascript
+// 변수 및 함수: camelCase
+const debateResult = [];
+
+const compareAnswers = () => {
+  return;
+};
+
+// 상수: UPPER_SNAKE_CASE
+const MAX_DEBATE_TURNS = 3;
+```
+
+## API Key 관리
+
+```env
+OPENAI_API_KEY=
+GEMINI_API_KEY=
+PERPLEXITY_API_KEY=
+```
+
+- API Key는 코드에 직접 작성하지 않습니다.
+- `.env` 파일은 `.gitignore`에 등록합니다.
+
+<br/>
+<br/>
+
+# 9. Commit Convention (커밋 컨벤션)
+
 ## 기본 구조
-```
-type : subject
 
-body 
-```
+```text
+type: subject
 
-<br/>
-
-## type 종류
-```
-feat : 새로운 기능 추가
-fix : 버그 수정
-docs : 문서 수정
-style : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-refactor : 코드 리펙토링
-test : 테스트 코드, 리펙토링 테스트 코드 추가
-chore : 빌드 업무 수정, 패키지 매니저 수정
+body
 ```
 
-<br/>
+## Type 종류
 
-## 커밋 이모지
+```text
+feat: 새로운 기능 추가
+fix: 버그 수정
+docs: 문서 수정
+style: 코드 포맷 수정
+refactor: 코드 리팩토링
+test: 테스트 코드 추가
+chore: 환경 설정 및 패키지 수정
 ```
-== 코드 관련
-📝	코드 작성
-🔥	코드 제거
-🔨	코드 리팩토링
-💄	UI / style 변경
-
-== 문서&파일
-📰	새 파일 생성
-🔥	파일 제거
-📚	문서 작성
-
-== 버그
-🐛	버그 리포트
-🚑	버그를 고칠 때
-
-== 기타
-🐎	성능 향상
-✨	새로운 기능 구현
-💡	새로운 아이디어
-🚀	배포
-```
-
-<br/>
 
 ## 커밋 예시
+
+```text
+feat: 모델 답변 불일치 탐지 기능 구현
+
+GPT와 Gemini의 선택지를 비교하고
+답변이 다를 경우 토론 진행 팝업을 출력
 ```
-== ex1
-✨Feat: "회원 가입 기능 구현"
 
-SMS, 이메일 중복확인 API 개발
+```text
+feat: 멀티 에이전트 토론 파이프라인 구현
 
-== ex2
-📚chore: styled-components 라이브러리 설치
-
-UI개발을 위한 라이브러리 styled-components 설치
+논의 챗봇과 모더레이터의 턴 교환 로직을 추가하고
+토론 종료 후 최종 결과를 요약하도록 구현
 ```
 
 <br/>
 <br/>
 
-# 10. 컨벤션 수행 결과
-<img width="100%" alt="코드 컨벤션" src="https://github.com/user-attachments/assets/0dc218c0-369f-45d2-8c6d-cdedc81169b4">
-<img width="100%" alt="깃플로우" src="https://github.com/user-attachments/assets/2a4d1332-acc2-4292-9815-d122f5aea77c">
+# 10. Project Results (프로젝트 성과)
+
+- 2025학년도 수능 전 문항 분석 결과, 전체 문항 중 **32%에서 한 개 이상의 모델이 오답을 생성**하는 현상을 확인했습니다.
+- 둘 중 한 모델만 오답인 경우 토론 후 정답 도달 비율이 **75%에서 97%로 향상**되었습니다.
+- 두 모델이 모두 오답인 경우에도 정답 도달 비율이 **0%에서 25%로 향상**되었습니다.
+- 서로 다른 모델을 활용한 토론이 동일 모델 기반 토론보다 높은 답변 교정 효과를 보였습니다.
+- 계산 오류, 자료 해석 오류, 개념 혼동 등 다양한 추론 오류가 토론 과정에서 수정되는 것을 확인했습니다.
+- 연구 결과를 논문으로 발전시켜 **KCC 2025 Best Poster Award**를 수상했습니다.
+
+<br/>
+<br/>
+
+# 11. Limitations & Future Work (한계점 및 향후 발전 방향)
+
+- 토론 성능 차이에 대한 통계적 유의성 검정 보완
+- 객관식 문항을 넘어 비정형·개방형 질문으로 검증 범위 확대
+- 두 모델이 동일한 오답을 생성하는 경우를 탐지할 외부 검증 방식 추가
+- 문제 유형과 도메인에 따른 최적 모델 조합 연구
+- 불필요한 토론을 줄이기 위한 토론 실행 조건 고도화
