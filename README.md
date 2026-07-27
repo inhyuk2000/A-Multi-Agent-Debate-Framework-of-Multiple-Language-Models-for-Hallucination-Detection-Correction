@@ -9,6 +9,11 @@
 <br/>
 <br/>
 
+## 📄 Paper
+
+> **KCC 2025 Best Poster Award**
+
+📑 [Research Paper (PDF)](https://drive.google.com/file/d/1q8yfzXqd31LKVdXK5JN_vYRBYoJjJf0D/view)
 
 # 1. Project Overview (프로젝트 개요)
 
