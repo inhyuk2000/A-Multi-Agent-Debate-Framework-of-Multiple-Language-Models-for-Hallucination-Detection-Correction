@@ -11,13 +11,13 @@
 
 ## 📄 Paper
 
-> **KCC 2025 Best Poster Award (최우수상)**
+> **다중 언어 모델 기반 멀티 에이전트 챗봇 토론 프레임워크를 통한 환각 탐지 및 교정**
 
 📑 [Research Paper (PDF)](https://drive.google.com/file/d/1q8yfzXqd31LKVdXK5JN_vYRBYoJjJf0D/view)
 
 ## 🏆 Award
 
-> **KCC 2025 Best Poster Award**
+> **KCC 2025 Best Poster Award (최우수상)**
 
 🏅 [Award Certificate](https://drive.google.com/file/d/14KXFnR415BbbJ_B9oexl76601NYtoaFU/view)
 
