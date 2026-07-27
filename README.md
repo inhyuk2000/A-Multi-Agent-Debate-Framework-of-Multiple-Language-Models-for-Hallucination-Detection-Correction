@@ -11,7 +11,7 @@
 
 ## 📄 Paper
 
-> **KCC 2025 Best Poster Award**
+> **KCC 2025 Best Poster Award (최우수상)**
 
 📑 [Research Paper (PDF)](https://drive.google.com/file/d/1q8yfzXqd31LKVdXK5JN_vYRBYoJjJf0D/view)
 
